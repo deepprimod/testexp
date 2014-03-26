@@ -30,6 +30,8 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);  // Route for home page
 app.get('/users', user.list);// Route for users list and delete user
 app.post('/users', user.add_user);// Route to add user
+app.get('/users/update', user.update);// Route to update user
+app.get('/users/delete', user.delete);// Route to delete user
 
 http.createServer(app).listen(app.get('port'), function() {
     console.log('Express server listening on port ' + app.get('port'));
